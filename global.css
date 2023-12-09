@@ -1,0 +1,455 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: 'League Spartan', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-family: 'Roboto Slab', serif;
+  width: 100%; height: 100%;
+  }
+  
+  body {
+    font-family: 'Roboto-slab', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff; position: relative; width: 100%; height: 100%;
+	font-size: 16px; font-family: 'Source Sans Pro', sans-serif; font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+  }
+  
+ .nav {
+    /* background-color: #111; */
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    width:  20%;
+    height: 30%;
+    justify-content: left;
+    align-items: left;
+    margin: 10px;
+  }
+  .logo2 {
+    width:  80%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+  }
+  .cart{
+    width:  50%;
+    height: 50%;
+    justify-content: right;
+    align-items: right;
+  }
+  .navBottom {
+    align-items: right;
+    justify-content: right;
+  }
+  .footer {
+    background-color: #f1f1f1;
+    padding: 5px;
+    text-align: center;
+  }
+  .menu-nav {
+    list-style: none; /* Menghilangkan bullet pada daftar */
+    padding: 0; /* Menghapus padding default */
+    margin: 0; /* Menghapus margin default */
+    text-align: center;
+    color: #ddd;
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .menu-nav li {
+    display: inline; /* Mengatur daftar agar berjajar secara horizontal */
+  }
+  
+  .menu-nav li a {
+    display: inline; /* Mengatur tautan agar mengisi seluruh area yang bisa diklik */
+    padding: 10px; /* Mengatur ruang di sekitar teks pada tautan */
+    text-decoration: none; /* Menghapus dekorasi default pada tautan */
+    color: #2c2c2c; /* Mengatur warna teks pada tautan */
+  
+  }
+  
+  .menu-nav li a:hover {
+    background-color: #979797; /* Mengubah warna latar belakang saat tautan dihover */
+  }
+  li a, .dropbtn {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: #1793a3(104, 161, 154);
+  }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+  }
+  
+  .dropdown-content a {
+    color: gray; /* ganti warna teks drpdwn*/
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #c2c2c2;} /*ganti warna hover */
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+/* anmasi fade */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+/* responsive */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+    .cart-info p{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .menu-nav a:not(:first-child) {display: none;}
+    .menu-nav a.icon {
+        float: right;
+        display: block;
+    }
+    .cart-info p{
+      display: none;
+    }
+}
+
+/* cart page */
+.cart-page{
+  margin: 80px auto;
+}
+.small-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.cartInfo{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cartInfo img {
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+th {
+  text-align: left;
+  padding: 5px;
+  color:#ffffff;
+  background-color: #ffd70a;
+  font-weight: normal;
+}
+td{
+  padding: 10px 5px;
+}
+td input{
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+td a {
+  color:  #ff3636;
+  font-size: 12px;
+}
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table {
+border-top: 3px solid #ffd70a;
+width: 100%;
+max-width: 350px;
+}
+td:last-child{
+  text-align: right;
+}
+th:last-child{
+  text-align: right;
+}
+.total-price .checkout {
+  background-color: #ffd70a;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  margin-top: 20px;
+  width: 200px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.total-price .checkout:hover {
+  background-color: #7e7134;
+}
+.total-price button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+/* produk */
+  .produk {
+    width: 300px;
+height: 550px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+  }
+  
+  .produk img {
+    width: 250px;
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .produk h2 {
+    margin-top: 10px;
+    font-size: 20px;
+
+  }
+  
+  .produk p {
+    color: #555;
+    max-width: 200px;
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+  }
+  
+  .produk .harga {
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 40px;
+  }
+  
+  .produk .beli {
+    background-color: #838383;
+    color: white;
+    padding: 10px 20px;
+    border:#2c2c2c;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 170px;
+  }
+  
+  .produk .beli:hover {
+    background-color: #585858;
+  }
+ .produk button a {
+    text-decoration: none;
+    color: #ffffff;
+ }
+/* form data */
+.form-data form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form-data label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-data input, select {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-data button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-data {
+  display: flex; 
+  justify-content: space-between; 
+  flex-wrap: wrap;
+}
+.form-group1 {
+flex: 1;
+margin-right: 10px;
+}
+.form-group2 {
+  flex: 1;
+  margin-right: 10px;
+  }
+
+/* sukses */
+.container {
+  text-align: center;
+}
+
+.sukses {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.sukses h2 {
+  margin-top: 0;
+}
+
+.animasi {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: scaleAnimation 1s ease-in-out infinite;
+}
+
+@keyframes scaleAnimation {
+  0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+ /* footer */
+ footer {
+  background-color: #ffffff;  
+  display: flex;
+  color: #000000;
+  margin-top: 70px;
+  height: 180px;
+  }
+  .footerCenter {
+    flex: 1;
+    width: 29%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .footerLeft {
+    flex: 1;
+    width: 29%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fMenuTitle {
+    font-size: 16px;
+  }
+  
+  .fList {
+    padding: 0;
+    list-style: none;
+    width: 200px;
+    font-size: 16px;
+    
+  }
+  .fList a {
+    color: #000000;
+  }
+  
+  .fListItem {
+    margin-bottom: 10px;
+    color: rgb(124, 124, 124);
+    cursor: pointer;
+  }
+  
+  .footerRight {
+    flex: 1;
+ width: 29%;
+text-align: center;
+    display: flex;
+    align-items: center;
+    float: center;
+    justify-content: center;
+  }
+  
+  .fIcons{
+list-style-type: none;
+text-decoration: none;
+
+  }
+.fIcons a {
+    list-style-type: none;
+text-decoration: none;
+color: #000000;
+margin-bottom: 5px;
+}
+  
+  .fIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
